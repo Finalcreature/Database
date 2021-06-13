@@ -14,18 +14,22 @@ public class TestSocket : SocketIOComponent
         //SocketIOComponent socket = go.GetComponent<SocketIOComponent>();
         //socket.On("boop", TestBoop);
 
+        if(IsConnected)
+        {
+            print("Connected");
+        }
+        else
+        {
+            print("Not Connected");
+        }
+
         
     }
 
     public override void Update()
     {
         base.Update();
-    }
-
-    public  void TestBoop(SocketIOEvent e)
-    {
-        Debug.Log("e");
-        Debug.Log(string.Format("[name: {0}, data: {1}]", e.name, e.data));
+        
     }
 }
 

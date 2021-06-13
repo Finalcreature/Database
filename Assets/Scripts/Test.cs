@@ -2,25 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.IO;
+using System.Text;
 
 public class Test : MonoBehaviour
 {
     [SerializeField] WWWForm form;
     void Start()
     {
-        StartCoroutine(PostData_Coroutine());
+        
     }
 
-    IEnumerator PostData_Coroutine()
+    public void SendJson(string json)
     {
-        string uri = "http://193.46.199.76:8087";
-        form = new WWWForm();
-        form.AddField("username", "tami");
-        form.AddField("phone","972547932000");
+        StartCoroutine(PostData_Coroutine(json));
+    }
 
-     
-     
-        using (UnityWebRequest request = UnityWebRequest.Post(uri, form))
+    IEnumerator PostData_Coroutine(string json)
+    {
+        string url = "http://193.46.199.76:8087";
+        //form = new WWWForm();
+        //form.AddField("username", "tami");
+        //form.AddField("phone","972547932000");
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
+
+        //using (UnityWebRequest request = UnityWebRequest.Put(url, bodyRaw))
+        using (UnityWebRequest request = UnityWebRequest.Post(url,json))
         {
             yield return request.SendWebRequest();
             if (request.isNetworkError || request.isHttpError)

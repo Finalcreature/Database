@@ -9,30 +9,35 @@ using UnityEngine.UI;
 
 public class JasonTest : MonoBehaviour
 {
-    MyClass myClass;
+    Info myClass;
 
     private void Start()
     {
-        myClass = new MyClass();
-        myClass.test = false;
+        myClass = new Info();
+        myClass.username = "tami";
+        myClass.phone = "972547932000";
         
 
         string jsonString = JsonUtility.ToJson(myClass);
+      
         File.WriteAllText(Application.dataPath + "/jsonText.json", jsonString);
         print(jsonString);
+        FindObjectOfType<Test>().SendJson(jsonString);
      
     }
 
-    private class MyClass
+    private class Info
     {
-        public bool test;
-    }
-
-    public void writeFile()
-    {
-        string jsonString = JsonUtility.ToJson(myClass);
+        public string username;
+        public string phone;
 
     }
+
+    //public void writeFile()
+    //{
+    //    string jsonString = JsonUtility.ToJson(myClass);
+
+    //}
 }
 
 
