@@ -10,9 +10,6 @@ public class TestSocket : SocketIOComponent
     public override void Start()
     {
         base.Start();
-        //GameObject go = GameObject.Find("SocketIO");
-        //SocketIOComponent socket = go.GetComponent<SocketIOComponent>();
-        //socket.On("boop", TestBoop);
 
         if(IsConnected)
         {

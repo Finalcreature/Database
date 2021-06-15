@@ -226,8 +226,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1929561063}
+  - component: {fileID: 1929561064}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Server
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,6 +248,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929561064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929561062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e28584504495b46ae199ea994509c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2028880498
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec39c41971e3de141bfdf755c73a0bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  json: {fileID: 4900000, guid: 6f7165fc9ff6e014abc008e581dd9a3e, type: 3}
 --- !u!4 &2028880500
 Transform:
   m_ObjectHideFlags: 0
@@ -298,13 +312,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028880498}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf130240fe0c86a45b494fc9c2a8f1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   url: ws://http://193.46.199.76:8087
-  autoConnect: 0
+  autoConnect: 1
   reconnectDelay: 5
   ackExpirationTime: 30
   pingInterval: 25
